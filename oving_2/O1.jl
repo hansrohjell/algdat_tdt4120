@@ -24,6 +24,8 @@ function createlinkedlist(length)
 end
 
 
+helge har liten tiss 
+
 
 function findindexinlist(linkedlist, index)
     node = linkedlist
