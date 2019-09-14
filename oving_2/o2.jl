@@ -1,3 +1,5 @@
+#funker
+
 
 array_test = [10,5,16,0]
 max_num = 8

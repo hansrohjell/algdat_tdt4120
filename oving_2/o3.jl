@@ -1,3 +1,6 @@
+#funker
+
+
 mutable struct NodeDoublyLinked
     prev::Union{NodeDoublyLinked, Nothing} # Er enten forrige node eller nothing
     next::Union{NodeDoublyLinked, Nothing} # Er enten neste node eller nothing
