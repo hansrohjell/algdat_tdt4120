@@ -24,7 +24,10 @@ function createlinkedlist(length)
 end
 
 
-function findindexinlist(linkedlist, index)
+
+#Funker foreløpig ikke i øvingssystemet
+
+function findindexinlist1(linkedlist, index)
     node = linkedlist
     i = 1
     if index == 1
@@ -34,20 +37,35 @@ function findindexinlist(linkedlist, index)
             node = node.next
             i += 1
             if i == index
-                break 
+                break
             end
         end
         return node.value
     end
 end
 
+#Prøver med for-løkke
+#fungerer nu
+
+function findindexinlist2(linkedlist, index)
+    node = linkedlist
+    for i in 1:index
+        if i == index
+            return node.value
+        elseif node.next == nothing
+            return -1
+        else 
+            node = node.next
+        end
+    end
+end
 
 
 
 function testfunction(numberoftests, length, index)
     for i in 1:numberoftests
         testlist = createlinkedlist(length)
-        answer = findindexinlist(testlist,index)
+        answer = findindexinlist2(testlist,index)
         if answer == -1
             println("Index larger than list")
         else
