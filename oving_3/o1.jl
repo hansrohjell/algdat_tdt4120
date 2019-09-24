@@ -23,7 +23,7 @@ function mergearrays(x,y,coordinate)
 end
 
 
-#funker foreløpig ikke
+#funker foreløpig ikke - mdrfkr
 
 function mergesort(x, coordinate)
     size_array = size(x, coordinate)
