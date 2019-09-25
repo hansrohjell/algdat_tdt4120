@@ -1,4 +1,6 @@
 
+#takk til Helge Bergo for masse bistand
+
 function mergearrays(x,y,coordinate)
     n1 = length(x[:,coordinate])
     n2 = length(y[:,coordinate])
