@@ -26,7 +26,6 @@ function mergearrays(x,y,coordinate)
 end
 
 
-#funker foreløpig ikke - mdrfkr
 
 function mergesort(x, coordinate)
     p = 1
