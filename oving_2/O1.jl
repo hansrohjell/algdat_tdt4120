@@ -44,7 +44,6 @@ function findindexinlist1(linkedlist, index)
     end
 end
 
-helge har liten tiss
 
 #Prøver med for-løkke
 #fungerer nu
