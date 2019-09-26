@@ -1,17 +1,24 @@
+#ty til HKiær for coop
+
 function binaryintervalsearch(x, delta, coordinate)
     liste = []
+    err = []
     max = 0
     min = x[1]
-    len = length(x, 1)
+    len = size(x, 1)
+    push!(err, -1)
+    push!(err, -1)
+    print(liste)
+
     
 
-    if length(x, 1) % 2 == 0
-        n1 = x[div(length(x),2), coordinate]
-        n2 = x[div(length(x, 2)-1), coordinate]
-        median = x[div((n1 + n2), 2)]
-        return median
+    if len % 2 == 0
+        temp = fld(len,2)
+        n1 = x[temp, coordinate]
+        n2 = x[temp + 1, coordinate]
+        median = (n1 + n2)/ 2
     else
-        median = x[div(length((x,1)+1), 2), coordinate]
+        median = x[div(len, 2)+1, coordinate]
     end
     
     delta_min = median - delta
@@ -21,18 +28,26 @@ function binaryintervalsearch(x, delta, coordinate)
 
     for i in 1:len
         if x[i, coordinate] >= delta_min 
-            liste[1] = count1
+            push!(liste, count1)
             break
         else count1 +=1
         end
     end
     for j in 1:len  
-        if x[i, coordinate > delta_max]
-            liste[2] = count2-1
+        if x[j, coordinate] > delta_max
+            push!(liste, count2-1)
             break
         else count2 += 1
-
         end
+    end
+
+    if length(liste) == 1
+        push!(liste, len)
+    end
+    if length(liste) <= 1
+        return err
+    elseif liste[1] > liste[2]
+        return err
     end
     return liste
 end
@@ -40,13 +55,3 @@ end
 
 
 
-function testfunction(coordinate, delta)
-    test_array1 = [1 2; 2 3; 3 0; 4 0; 5 1]
-    test_array2 = [1 0; 2 0; 2 0; 3 0; 4 0; 5 0; 5 0]
-    test = binaryintervalsearch(test_array1, coordinate, delta)
-    println(test)
-end
-
-
-
-testfunction(1, 1.5)
